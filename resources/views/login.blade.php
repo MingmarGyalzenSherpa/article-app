@@ -3,6 +3,13 @@
 
 @section('content')
 <div class="container mt-3 card p-3 " >
+  @if(Session::has('fail'))
+
+  <div class="alert alert-danger" role="alert">
+    {{Session::get('fail')}}
+  </div>
+  @endif
+  <h2> LOGIN </h2>
     <form action="{{route('loginUser')}}" method="POST">
       @csrf
         <div class="mb-3">
